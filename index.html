@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Restaurant Landing</title>
+  <style>
+    body { font-family: Arial; margin:0; text-align:center; }
+    nav { background:#222; padding:10px; }
+    nav a { color:white; margin:0 15px; text-decoration:none; }
+    .page { display:none; padding:20px; }
+    .active { display:block; }
+    input, button { margin:5px; padding:8px; width:200px; }
+    button { background:#ff9800; border:none; color:white; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="#" onclick="showPage('home')">Home</a>
+  <a href="#" onclick="showPage('signup')">Sign Up</a>
+  <a href="#" onclick="showPage('login')">Login</a>
+</nav>
+
+<div id="home" class="page active">
+  <h1>Welcome to Gourmet Bliss</h1>
+  <p>Delicious food, delivered fresh.</p>
+</div>
+
+<div id="signup" class="page">
+  <h2>Sign Up</h2>
+  <input type="text" placeholder="Full Name"><br>
+  <input type="email" placeholder="Email"><br>
+  <input type="password" placeholder="Password"><br>
+  <button>Sign Up</button>
+</div>
+
+<div id="login" class="page">
+  <h2>Login</h2>
+  <input type="email" placeholder="Email"><br>
+  <input type="password" placeholder="Password"><br>
+  <button>Login</button>
+</div>
+
+<script>
+  function showPage(id) {
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+  }
+</script>
+
+</body>
+</html>
